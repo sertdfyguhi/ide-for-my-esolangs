@@ -62,3 +62,32 @@ def pltsrun(text):
     if not e:
         s = toprint.rsplit('\n', 1)
         return ''.join(s)
+
+def dotterrun(text):
+    stack = []
+    toprint = ''
+    a = False
+    l = text.split('_')
+    for idx, item in enumerate(l):
+        if item.startswith('..............'):
+            stack.append(chr(int(item[14:])))
+        elif item.startswith('.............'):
+            stack.insert(0, chr(int(item[13:])))
+        elif item == '............':
+            toprint += ''.join(stack)
+        elif item == '...........':
+            toprint += ''.join(stack)[::-1]
+        elif item == '..........':
+            toprint += stack[-1]
+        elif item == '.........':
+            toprint += stack[0]
+        elif item == '........':
+            del stack[-1]
+        elif item == '.......':
+            del stack[0]
+        else:
+            return f"{idx + 1}: error"
+            a = True
+            break
+    if a == False:
+        return toprint
