@@ -8,3 +8,4 @@ run ```python3 [main.py path]```
 ## links to my esolangs
 [plts](https://esolangs.org/wiki/plts)  
 [ewpl](https://esolangs.org/wiki/ewpl)
+[dotter](https://esolangs.org/wiki/dotter)
